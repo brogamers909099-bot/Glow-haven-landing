@@ -3,97 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Glow Haven | Premium Skincare & Haircare Guide</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Glow Haven</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header img {
+      height: 60px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+    .buy-btn {
+      background: #00b140;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: #888;
+      color: white;
+    }
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 25px;
+    }
+    .section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .card {
+      background: white;
+      padding: 25px;
+      margin: 15px auto;
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f7f7f7;
+      font-size: 0.9em;
+      color: #555;
+    }
+  </style>
 </head>
-<body class="bg-white text-gray-800 font-sans">
-
-  <!-- Header -->
-  <header class="flex items-center justify-between px-8 py-4 shadow-md bg-white">
-    <img src="logo.png" alt="Glow Haven Logo" class="h-12">
-    <nav class="flex items-center space-x-6 font-medium">
-      <ul class="flex space-x-6">
-        <li><a href="#about" class="hover:text-green-600">About</a></li>
-        <li><a href="#features" class="hover:text-green-600">Features</a></li>
-        <li><a href="#testimonials" class="hover:text-green-600">Testimonials</a></li>
-      </ul>
-      <a href="https://spf.bio/5SLls" target="_blank" class="px-5 py-2 bg-green-600 text-white font-semibold rounded-xl shadow-md hover:bg-green-700 transition">
-        Buy Now – ₹149
-      </a>
+<body>
+  <header>
+    <img src="logo.png" alt="Glow Haven Logo">
+    <nav>
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#testimonials">Testimonials</a>
     </nav>
+    <a href="https://spf.bio/5SLls" class="buy-btn">Buy Now – ₹149</a>
   </header>
 
-  <!-- Hero Section -->
-  <section class="relative text-center py-24 px-6 text-white"
-           style="background-image: url('hero.jpg'); background-size: cover; background-position: center;">
-    <div class="bg-black bg-opacity-50 absolute inset-0"></div>
-    <div class="relative z-10 max-w-3xl mx-auto">
-      <h1 class="text-4xl md:text-6xl font-bold mb-6">Glow With Confidence</h1>
-      <p class="text-lg md:text-xl mb-8">Your sanctuary for glowing skin & healthy hair. Step into luxury self-care.</p>
-      <a href="#buy" class="px-8 py-4 bg-green-600 text-white font-semibold rounded-2xl shadow-lg hover:bg-green-700 transition">
-        Buy Now – ₹149
-      </a>
+  <section class="hero">
+    <h1>Glow With Confidence</h1>
+    <p>Your sanctuary for glowing skin & healthy hair. Step into luxury self-care.</p>
+    <a href="https://spf.bio/5SLls" class="buy-btn">Buy Now – ₹149</a>
+  </section>
+
+  <section id="features" class="section">
+    <h2>✨ What You'll Discover</h2>
+    <div class="card">
+      <h3>Luxury Routines</h3>
+      <p>Step-by-step skincare & haircare rituals designed for premium results.</p>
+    </div>
+    <div class="card">
+      <h3>Pro Ingredients</h3>
+      <p>Spotlights on Vitamin C, Hyaluronic Acid, Botanical blends & more.</p>
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section id="features" class="py-20 px-6 max-w-6xl mx-auto">
-    <h2 class="text-3xl font-bold text-center mb-12">✨ What You'll Discover</h2>
-    <div class="grid md:grid-cols-3 gap-10">
-      <div class="p-6 bg-white shadow-lg rounded-2xl text-center hover:shadow-xl transition">
-        <h3 class="text-xl font-semibold mb-4">Luxury Routines</h3>
-        <p>Step-by-step skincare & haircare rituals designed for premium results.</p>
-      </div>
-      <div class="p-6 bg-white shadow-lg rounded-2xl text-center hover:shadow-xl transition">
-        <h3 class="text-xl font-semibold mb-4">Pro Ingredients</h3>
-        <p>Spotlights on Vitamin C, Hyaluronic Acid, Botanical blends & more.</p>
-      </div>
-      <div class="p-6 bg-white shadow-lg rounded-2xl text-center hover:shadow-xl transition">
-        <h3 class="text-xl font-semibold mb-4">Confidence Boosters</h3>
-        <p>Grooming, styling, and lifestyle tips for radiant confidence daily.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section id="testimonials" class="bg-gray-50 py-20 px-6">
-    <h2 class="text-3xl font-bold text-center mb-12">💎 Loved By Our Glow Haven Community</h2>
-    <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-      <div class="bg-white p-6 rounded-2xl shadow-md text-center">
-        <img src="testimonial1.jpg" alt="Customer 1" class="w-16 h-16 rounded-full mx-auto mb-4">
-        <p class="italic mb-4">“My skin has never looked better – Glow Haven’s guide transformed my daily routine.”</p>
-        <p class="font-semibold">– Rahul S.</p>
-      </div>
-      <div class="bg-white p-6 rounded-2xl shadow-md text-center">
-        <img src="testimonial2.jpg" alt="Customer 2" class="w-16 h-16 rounded-full mx-auto mb-4">
-        <p class="italic mb-4">“Finally, a premium plan that feels simple yet so luxurious. Total game-changer.”</p>
-        <p class="font-semibold">– Arjun M.</p>
-      </div>
-      <div class="bg-white p-6 rounded-2xl shadow-md text-center">
-        <img src="testimonial3.jpg" alt="Customer 3" class="w-16 h-16 rounded-full mx-auto mb-4">
-        <p class="italic mb-4">“Salon-quality care at home. I’ve never felt more confident about my skin.”</p>
-        <p class="font-semibold">– Karan R.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Buy Now Section -->
-  <section id="buy" class="text-center py-20 px-6">
-    <h2 class="text-3xl font-bold mb-6">🌿 Ready To Transform Your Glow?</h2>
-    <a href="https://spf.bio/5SLls" target="_blank" class="px-10 py-4 bg-green-600 text-white font-semibold rounded-2xl shadow-lg hover:bg-green-700 transition">
-      Buy Now – ₹149
-    </a>
-    <p class="mt-4 text-gray-600">Instant access · Lifetime use</p>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-300 py-10 text-center">
-    <img src="logo.png" alt="Glow Haven Logo" class="h-10 mx-auto mb-4">
-    <p class="mb-4">Follow us on 
-      <a href="https://www.instagram.com/glow.haven.official?igsh=MTRvcmNjeWFqcTMwOQ==" target="_blank" class="text-green-400 hover:text-green-300">Instagram</a>
-    </p>
-    <p class="text-sm">© 2025 Glow Haven. All rights reserved.</p>
+  <footer>
+    <p>Follow us on <a href="https://www.instagram.com/glow.haven.official" target="_blank">Instagram</a></p>
+    <p>© 2025 Glow Haven. All rights reserved.</p>
   </footer>
-
 </body>
 </html>
