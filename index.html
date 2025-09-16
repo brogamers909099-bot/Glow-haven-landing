@@ -138,11 +138,44 @@
       color: #ffd36b;
     }
 
+    /* Preview Section */
+    .preview-section {
+      text-align: center;
+      padding: 60px 20px;
+      background: #000;
+    }
+
+    .preview-section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #ffd36b;
+    }
+
+    .preview-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .preview-gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .preview-gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+    }
+
     /* Testimonials */
     .testimonials {
       text-align: center;
       padding: 60px 20px;
-      background: #000;
+      background: #111;
     }
 
     .testimonials h2 {
@@ -201,8 +234,8 @@
       <img src="logo.png" alt="Glow Haven Logo">
     </a>
     <nav>
-      <a href="#about">About</a>
       <a href="#features">Features</a>
+      <a href="#inside">Inside Guide</a>
       <a href="#testimonials">Testimonials</a>
     </nav>
   </header>
@@ -212,11 +245,7 @@
     <div class="hero-content">
       <h1>Glow With Confidence</h1>
       <p>Your sanctuary for glowing skin & healthy hair. Step into luxury self-care.</p>
-
-      <!-- SALE badge -->
       <div class="sale-badge">🔥 Limited Time Offer</div>
-
-      <!-- Buy Button -->
       <a href="https://spf.bio/5SLls" class="btn-gold">Buy Now</a>
       <div class="price">
         <span class="old-price">₹1499</span>
@@ -238,13 +267,28 @@
     </div>
   </section>
 
+  <!-- Inside the Guide -->
+  <section id="inside" class="preview-section">
+    <h2>📖 Inside the Glow Haven Guide</h2>
+    <div class="preview-gallery">
+      <img src="images/previews/page1.jpg" alt="Guide Preview 1">
+      <img src="images/previews/page2.jpg" alt="Guide Preview 2">
+      <img src="images/previews/page3.jpg" alt="Guide Preview 3">
+      <img src="images/previews/page4.jpg" alt="Guide Preview 4">
+      <img src="images/previews/page5.jpg" alt="Guide Preview 5">
+      <img src="images/previews/page6.jpg" alt="Guide Preview 6">
+      <img src="images/previews/page7.jpg" alt="Guide Preview 7">
+      <img src="images/previews/page8.jpg" alt="Guide Preview 8">
+    </div>
+  </section>
+
   <!-- Testimonials -->
   <section id="testimonials" class="testimonials">
     <h2>🌟 Testimonials</h2>
     <div class="testimonial">
       "Glow Haven completely changed my skincare routine — my skin feels radiant every day!"
       <div class="stars">★★★★★</div>
-      <span>– Ayesha K.</span>
+      <span>– Aarav S.</span>
     </div>
     <div class="testimonial">
       "The luxury rituals make me feel like I'm at a spa. Best investment in self-care!"
@@ -254,7 +298,7 @@
     <div class="testimonial">
       "I was skeptical at first, but Glow Haven works wonders. My hair has never been this healthy!"
       <div class="stars">★★★★★</div>
-      <span>– Neha S.</span>
+      <span>– Karan P.</span>
     </div>
   </section>
 
