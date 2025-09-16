@@ -6,82 +6,91 @@
   <title>Glow Haven | Premium Skincare & Haircare Guide</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-white text-gray-800 font-sans">
+<body class="bg-gradient-to-br from-gray-900 via-black to-gray-800 text-gray-100 font-sans">
 
   <!-- Header -->
-  <header class="flex items-center justify-between px-8 py-4 shadow-md bg-white">
+  <header class="flex items-center justify-between px-8 py-4 bg-black bg-opacity-60 backdrop-blur-xl shadow-lg sticky top-0 z-50">
     <img src="logo.png" alt="Glow Haven Logo" class="h-12">
     <nav>
       <ul class="flex space-x-6 font-medium">
-        <li><a href="#about" class="hover:text-green-600">About</a></li>
-        <li><a href="#features" class="hover:text-green-600">Features</a></li>
-        <li><a href="#testimonials" class="hover:text-green-600">Testimonials</a></li>
-        <li><a href="#download" class="hover:text-green-600">Download</a></li>
+        <li><a href="#about" class="hover:text-emerald-400 transition">About</a></li>
+        <li><a href="#features" class="hover:text-emerald-400 transition">Features</a></li>
+        <li><a href="#testimonials" class="hover:text-emerald-400 transition">Testimonials</a></li>
+        <li><a href="#download" class="hover:text-emerald-400 transition">Buy Now</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- Hero Section -->
-<a href="#download" class="px-8 py-4 bg-green-600 text-white font-semibold rounded-2xl shadow-lg hover:bg-green-700 transition">
-  Get Your Guide – ₹149
-</a>
+  <section class="relative text-center py-24 px-6"
+           style="background-image: url('hero.jpg'); background-size: cover; background-position: center;">
+    <div class="bg-black bg-opacity-70 absolute inset-0"></div>
+    <div class="relative z-10 max-w-3xl mx-auto">
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-emerald-400 to-green-600 bg-clip-text text-transparent">
+        Glow With Confidence
+      </h1>
+      <p class="text-lg md:text-xl mb-8 text-gray-200">Your sanctuary for glowing skin & healthy hair. Step into luxury self-care.</p>
+      <a href="#download" class="px-10 py-4 bg-gradient-to-r from-emerald-400 to-green-600 text-white font-semibold rounded-2xl shadow-[0_0_25px_rgba(16,255,120,0.6)] hover:scale-105 transition transform">
+        Get Your Guide – ₹149
+      </a>
+    </div>
+  </section>
 
   <!-- Features Section -->
   <section id="features" class="py-20 px-6 max-w-6xl mx-auto">
-    <h2 class="text-3xl font-bold text-center mb-12">✨ What You'll Discover</h2>
+    <h2 class="text-3xl font-bold text-center mb-12 text-emerald-400">✨ What You'll Discover</h2>
     <div class="grid md:grid-cols-3 gap-10">
-      <div class="p-6 bg-white shadow-lg rounded-2xl text-center hover:shadow-xl transition">
-        <h3 class="text-xl font-semibold mb-4">Luxury Routines</h3>
+      <div class="p-6 bg-gray-800 bg-opacity-70 backdrop-blur-xl rounded-2xl text-center border border-gray-700 shadow-lg hover:shadow-[0_0_25px_rgba(16,255,120,0.4)] transition">
+        <h3 class="text-xl font-semibold mb-4 text-emerald-300">Luxury Routines</h3>
         <p>Step-by-step skincare & haircare rituals designed for premium results.</p>
       </div>
-      <div class="p-6 bg-white shadow-lg rounded-2xl text-center hover:shadow-xl transition">
-        <h3 class="text-xl font-semibold mb-4">Pro Ingredients</h3>
+      <div class="p-6 bg-gray-800 bg-opacity-70 backdrop-blur-xl rounded-2xl text-center border border-gray-700 shadow-lg hover:shadow-[0_0_25px_rgba(16,255,120,0.4)] transition">
+        <h3 class="text-xl font-semibold mb-4 text-emerald-300">Pro Ingredients</h3>
         <p>Spotlights on Vitamin C, Hyaluronic Acid, Botanical blends & more.</p>
       </div>
-      <div class="p-6 bg-white shadow-lg rounded-2xl text-center hover:shadow-xl transition">
-        <h3 class="text-xl font-semibold mb-4">Confidence Boosters</h3>
+      <div class="p-6 bg-gray-800 bg-opacity-70 backdrop-blur-xl rounded-2xl text-center border border-gray-700 shadow-lg hover:shadow-[0_0_25px_rgba(16,255,120,0.4)] transition">
+        <h3 class="text-xl font-semibold mb-4 text-emerald-300">Confidence Boosters</h3>
         <p>Grooming, styling, and lifestyle tips for radiant confidence daily.</p>
       </div>
     </div>
   </section>
 
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-20 px-6 bg-gray-950 bg-opacity-70">
+    <h2 class="text-3xl font-bold text-center mb-12 text-emerald-400">💎 Loved By Our Glow Haven Community</h2>
+    <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <div class="bg-gray-800 bg-opacity-70 p-6 rounded-2xl border border-gray-700 shadow-md text-center">
+        <img src="testimonial1.jpg" alt="Customer 1" class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-emerald-400">
+        <p class="italic mb-4">“My skin has never looked better – Glow Haven’s guide transformed my daily routine.”</p>
+        <p class="font-semibold text-emerald-300">– Rahul S.</p>
+      </div>
+      <div class="bg-gray-800 bg-opacity-70 p-6 rounded-2xl border border-gray-700 shadow-md text-center">
+        <img src="testimonial2.jpg" alt="Customer 2" class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-emerald-400">
+        <p class="italic mb-4">“Finally, a premium plan that feels simple yet so luxurious. Total game-changer.”</p>
+        <p class="font-semibold text-emerald-300">– Arjun M.</p>
+      </div>
+      <div class="bg-gray-800 bg-opacity-70 p-6 rounded-2xl border border-gray-700 shadow-md text-center">
+        <img src="testimonial3.jpg" alt="Customer 3" class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-emerald-400">
+        <p class="italic mb-4">“Salon-quality care at home. I’ve never felt more confident about my skin.”</p>
+        <p class="font-semibold text-emerald-300">– Karan R.</p>
+      </div>
+    </div>
+  </section>
 
   <!-- Call to Action -->
-<section id="download" class="text-center py-20 px-6">
-  <h2 class="text-3xl font-bold mb-6">🌿 Ready To Transform Your Glow?</h2>
-  <a href="your-guide.pdf" target="_blank" class="px-10 py-4 bg-green-600 text-white font-semibold rounded-2xl shadow-lg hover:bg-green-700 transition">
-    Buy Now – ₹149
-  </a>
-  <p class="mt-4 text-gray-600">Instant access · Lifetime use · One-time payment</p>
-</section>
-  
-<!-- Testimonials -->
-<section id="testimonials" class="bg-gray-50 py-20 px-6">
-  <h2 class="text-3xl font-bold text-center mb-12">💎 Loved By Our Glow Haven Community</h2>
-  <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-    <div class="bg-white p-6 rounded-2xl shadow-md text-center">
-      <img src="testimonial1.jpg" alt="Customer 1" class="w-16 h-16 rounded-full mx-auto mb-4">
-      <p class="italic mb-4">“My skin has never looked better – Glow Haven’s guide transformed my daily routine.”</p>
-      <p class="font-semibold">– Rahul S.</p>
-    </div>
-    <div class="bg-white p-6 rounded-2xl shadow-md text-center">
-      <img src="testimonial2.jpg" alt="Customer 2" class="w-16 h-16 rounded-full mx-auto mb-4">
-      <p class="italic mb-4">“Finally, a premium plan that feels simple yet so luxurious. Total game-changer.”</p>
-      <p class="font-semibold">– Arjun M.</p>
-    </div>
-    <div class="bg-white p-6 rounded-2xl shadow-md text-center">
-      <img src="testimonial3.jpg" alt="Customer 3" class="w-16 h-16 rounded-full mx-auto mb-4">
-      <p class="italic mb-4">“Salon-quality care at home. I’ve never felt more confident about my skin.”</p>
-      <p class="font-semibold">– Karan R.</p>
-    </div>
-  </div>
-</section>
-  
+  <section id="download" class="text-center py-20 px-6">
+    <h2 class="text-3xl font-bold mb-6 bg-gradient-to-r from-emerald-400 to-green-600 bg-clip-text text-transparent">🌿 Ready To Transform Your Glow?</h2>
+    <a href="your-guide.pdf" target="_blank" class="px-10 py-4 bg-gradient-to-r from-emerald-400 to-green-600 text-white font-semibold rounded-2xl shadow-[0_0_30px_rgba(16,255,120,0.6)] hover:scale-105 transition transform">
+      Buy Now – ₹149
+    </a>
+    <p class="mt-4 text-gray-400">Instant access · Lifetime use · Premium Value</p>
+  </section>
+
   <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-300 py-10 text-center">
+  <footer class="bg-black bg-opacity-80 text-gray-400 py-10 text-center border-t border-gray-700">
     <img src="logo.png" alt="Glow Haven Logo" class="h-10 mx-auto mb-4">
     <p class="mb-4">Follow us on 
-      <a href="https://instagram.com/yourhandle" target="_blank" class="text-green-400 hover:text-green-300">Instagram</a>
+      <a href="https://instagram.com/yourhandle" target="_blank" class="text-emerald-400 hover:text-emerald-300">Instagram</a>
     </p>
     <p class="text-sm">© 2025 Glow Haven. All rights reserved.</p>
   </footer>
