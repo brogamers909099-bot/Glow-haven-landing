@@ -3,244 +3,322 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Glow Haven</title>
+  <title>Glow Haven | Premium Skincare & Haircare Guide</title>
   <style>
-    /* Reset & Base */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #111;
-      color: #fff;
-      text-align: center;
+      background: linear-gradient(135deg, #0a0a0a, #1c1c1c, #2b2b2b);
+      color: #f5f5f5;
     }
 
     header {
-      background: #000;
-      padding: 15px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      padding: 20px 40px;
+      background: rgba(0,0,0,0.8);
     }
 
     header img {
-      height: 30px;
+      height: 50px;
     }
 
-    nav a {
-      margin: 0 12px;
-      color: #fff;
+    header nav a {
+      margin: 0 15px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      color: #f5f5f5;
     }
 
-    nav a:hover {
-      color: #ffd700;
+    header nav a:hover {
+      color: #ffd36b;
     }
 
     /* Hero Section */
     .hero {
-      padding: 60px 20px;
-      background: linear-gradient(to bottom, #111, #222);
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(145deg, #111, #1a1a1a, #000);
     }
 
     .hero h1 {
-      font-size: 32px;
-      margin-bottom: 12px;
+      font-size: 3rem;
+      margin-bottom: 20px;
     }
 
     .hero p {
-      font-size: 18px;
-      margin-bottom: 25px;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
       color: #ddd;
     }
 
-    /* Buttons */
-    .cta-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 10px;
-    }
-
-    .cta-button {
+    /* SALE badge */
+    .sale-badge {
       display: inline-block;
-      padding: 12px 24px;
-      border-radius: 30px;
-      font-weight: bold;
-      font-size: 16px;
-      text-align: center;
-      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      padding: 6px 14px;
+      margin-bottom: 16px;
+      font-weight: 700;
+      font-size: 14px;
+      color: #111;
+      background: linear-gradient(90deg,#ffd36b,#f1b028);
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(241,176,40,0.6), 0 0 25px rgba(241,176,40,0.4);
+      animation: glowPulse 2s infinite ease-in-out;
     }
 
-    .cta-button.offer {
-      background: linear-gradient(90deg, #ff8c00, #ffb84d);
-      color: #fff;
-      border: none;
+    .btn-gold {
+      display: inline-block;
+      padding: 14px 26px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 18px;
+      text-decoration: none;
+      color: #111;
+      background: linear-gradient(90deg, #ffd36b, #f1b028);
+      box-shadow: 0 0 15px rgba(241,176,40,0.6), 0 0 30px rgba(241,176,40,0.4);
+      animation: glowPulse 2s infinite ease-in-out;
+      transition: transform .16s ease;
     }
 
-    .cta-button.buy {
-      background: #ffeb3b;
-      color: #000;
-      border: none;
+    .btn-gold:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 0 25px rgba(241,176,40,0.85), 0 0 50px rgba(241,176,40,0.65);
     }
 
-    .cta-button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 12px rgba(255, 193, 7, 0.3);
+    @keyframes glowPulse {
+      0%   { box-shadow: 0 0 12px rgba(241,176,40,0.5), 0 0 24px rgba(241,176,40,0.3); }
+      50%  { box-shadow: 0 0 28px rgba(241,176,40,0.9), 0 0 60px rgba(241,176,40,0.6); }
+      100% { box-shadow: 0 0 12px rgba(241,176,40,0.5), 0 0 24px rgba(241,176,40,0.3); }
     }
 
     .price {
-      font-size: 20px;
-      margin-top: 10px;
+      margin-top: 12px;
+      font-size: 1.2rem;
     }
 
-    .price del {
+    .old-price {
+      text-decoration: line-through;
       color: #888;
       margin-right: 10px;
     }
 
-    /* Section Titles */
-    .section-title {
-      font-size: 22px;
-      font-weight: bold;
-      color: #ffd700;
-      text-align: center;
-      margin: 40px 0 20px;
-      text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
-      border-top: 2px solid rgba(255, 215, 0, 0.3);
-      border-bottom: 2px solid rgba(255, 215, 0, 0.3);
-      padding: 10px 0;
+    .new-price {
+      font-size: 1.6rem;
+      font-weight: 800;
+      background: linear-gradient(90deg,#ffd36b,#f1b028);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    /* Features */
+    /* Features Section */
     .features {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      padding: 0 20px;
-    }
-
-    .feature {
-      background: #1a1a1a;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 8px rgba(255, 215, 0, 0.2);
-    }
-
-    .feature h3 {
-      color: #fff;
-      margin-bottom: 8px;
-    }
-
-    .feature p {
-      color: #ccc;
-      font-size: 14px;
-    }
-
-    /* Guide Previews */
-    .guide-previews {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-      padding: 20px;
-    }
-
-    .guide {
-      background: #1a1a1a;
-      border-radius: 12px;
-      overflow: hidden;
       text-align: center;
+      padding: 60px 20px;
+      background: #111;
     }
 
-    .guide img {
+    .features h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #ffd36b;
+    }
+
+    .feature-box {
+      background: #1c1c1c;
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 0 12px rgba(255, 211, 107, 0.2);
+    }
+
+    .feature-box h3 {
+      margin-bottom: 10px;
+      color: #ffd36b;
+    }
+
+    /* Preview Section */
+    .preview-section {
+      text-align: center;
+      padding: 60px 20px;
+      background: #000;
+    }
+
+    .preview-section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #ffd36b;
+    }
+
+    .preview-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    @media (min-width: 768px) {
+      .preview-gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .preview-gallery {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .preview-gallery img {
       width: 100%;
-      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+      transition: transform 0.3s ease;
     }
 
-    .guide p {
-      padding: 10px;
-      font-size: 14px;
-      color: #fff;
+    .preview-gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+    }
+
+    /* Testimonials */
+    .testimonials {
+      text-align: center;
+      padding: 60px 20px;
+      background: #111;
+    }
+
+    .testimonials h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #ffd36b;
+    }
+
+    .testimonial {
+      background: #1a1a1a;
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 500px;
+      border-radius: 15px;
+      font-style: italic;
+      box-shadow: 0 0 12px rgba(255, 211, 107, 0.2);
+    }
+
+    .testimonial span {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #ffd36b;
+    }
+
+    /* Star rating */
+    .stars {
+      color: #ffd36b;
+      font-size: 1.2rem;
+      margin: 10px 0;
     }
 
     /* Footer */
     footer {
+      text-align: center;
+      padding: 40px 20px;
       background: #000;
-      padding: 20px;
-      color: #aaa;
-      font-size: 14px;
-      margin-top: 40px;
+      color: #ccc;
+    }
+
+    footer a {
+      color: #ffd36b;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
+
   <!-- Header -->
   <header>
-    <img src="logo.png" alt="Glow Haven Logo">
+    <a href="index.html">
+      <img src="logo.png" alt="Glow Haven Logo">
+    </a>
     <nav>
       <a href="#features">Features</a>
-      <a href="#guide">Inside Guide</a>
+      <a href="#inside">Inside Guide</a>
       <a href="#testimonials">Testimonials</a>
     </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
-    <h1>Glow With Confidence</h1>
-    <p>Your sanctuary for glowing skin & healthy hair. Step into luxury self-care.</p>
-    <div class="cta-buttons">
-      <a href="#" class="cta-button offer">🔥 Limited Time Offer</a>
-      <a href="#" class="cta-button buy">Buy Now</a>
-    </div>
-    <div class="price">
-      <del>₹1499</del> <span>₹149</span>
+    <div class="hero-content">
+      <h1>Glow With Confidence</h1>
+      <p>Your sanctuary for glowing skin & healthy hair. Step into luxury self-care.</p>
+      <div class="sale-badge">🔥 Limited Time Offer</div>
+      <a href="https://spf.bio/5SLls" class="btn-gold">Buy Now</a>
+      <div class="price">
+        <span class="old-price">₹1499</span>
+        <span class="new-price">₹149</span>
+      </div>
     </div>
   </section>
 
   <!-- Features -->
-  <section id="features">
-    <h2 class="section-title">✨ What You'll Discover</h2>
-    <div class="features">
-      <div class="feature">
-        <h3>Luxury Routines</h3>
-        <p>Step-by-step skincare & haircare rituals designed for premium results.</p>
-      </div>
-      <div class="feature">
-        <h3>Pro Ingredients</h3>
-        <p>Spotlights on Vitamin C, Hyaluronic Acid, Botanical blends & more.</p>
-      </div>
+  <section id="features" class="features">
+    <h2>✨ What You'll Discover</h2>
+    <div class="feature-box">
+      <h3>Luxury Routines</h3>
+      <p>Step-by-step skincare & haircare rituals designed for premium results.</p>
+    </div>
+    <div class="feature-box">
+      <h3>Pro Ingredients</h3>
+      <p>Spotlights on Vitamin C, Hyaluronic Acid, Botanical blends & more.</p>
     </div>
   </section>
 
-  <!-- Guide Previews -->
-  <section id="guide">
-    <h2 class="section-title">📖 Inside the Glow Haven Guide</h2>
-    <div class="guide-previews">
-      <div class="guide">
-        <img src="page1.jpg" alt="Guide Preview 1">
-        <p>Guide Preview 1</p>
-      </div>
-      <div class="guide">
-        <img src="page2.jpg" alt="Guide Preview 2">
-        <p>Guide Preview 2</p>
-      </div>
-      <div class="guide">
-        <img src="page3.jpg" alt="Guide Preview 3">
-        <p>Guide Preview 3</p>
-      </div>
-      <div class="guide">
-        <img src="page4.jpg" alt="Guide Preview 4">
-        <p>Guide Preview 4</p>
-      </div>
+  <!-- Inside the Guide -->
+  <section id="inside" class="preview-section">
+    <h2>📖 Inside the Glow Haven Guide</h2>
+    <div class="preview-gallery">
+      <img src="images/previews/Screenshot_2025-09-16-12-23-00-437_com.google.android.apps.docs.png" alt="Guide Preview 1">
+      <img src="images/previews/Screenshot_2025-09-16-12-23-27-099_com.google.android.apps.docs.png" alt="Guide Preview 2">
+      <img src="images/previews/Screenshot_2025-09-16-12-23-46-944_com.google.android.apps.docs.png" alt="Guide Preview 3">
+      <img src="images/previews/Screenshot_2025-09-16-12-24-04-900_com.google.android.apps.docs.png" alt="Guide Preview 4">
+      <img src="images/previews/Screenshot_2025-09-16-15-41-50-680_com.google.android.apps.docs.png" alt="Guide Preview 5">
+      <img src="images/previews/Screenshot_2025-09-16-15-43-02-540_com.google.android.apps.docs.png" alt="Guide Preview 6">
+      <img src="images/previews/Screenshot_2025-09-16-15-43-51-710_com.google.android.apps.docs.png" alt="Guide Preview 7">
+      <img src="images/previews/Screenshot_2025-09-16-15-44-30-963_com.google.android.apps.docs.png" alt="Guide Preview 8">
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="testimonials">
+    <h2>🌟 Testimonials</h2>
+    <div class="testimonial">
+      "Glow Haven completely changed my skincare routine — my skin feels radiant every day!"
+      <div class="stars">★★★★★</div>
+      <span>– Aarav S.</span>
+    </div>
+    <div class="testimonial">
+      "The luxury rituals make me feel like I'm at a spa. Best investment in self-care!"
+      <div class="stars">★★★★★</div>
+      <span>– Rohan M.</span>
+    </div>
+    <div class="testimonial">
+      "I was skeptical at first, but Glow Haven works wonders. My hair has never been this healthy!"
+      <div class="stars">★★★★★</div>
+      <span>– Karan P.</span>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
+    <p>Follow us on <a href="https://www.instagram.com/glow.haven.official?igsh=MTRvcmNjeWFqcTMwOQ==" target="_blank">Instagram</a></p>
     <p>© 2025 Glow Haven. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
