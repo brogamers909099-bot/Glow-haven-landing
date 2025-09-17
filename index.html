@@ -111,13 +111,37 @@
       -webkit-text-fill-color: transparent;
     }
 
-    /* Countdown */
+    /* Discount Tag */
+    .discount-tag {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #111;
+      background: linear-gradient(90deg, #ff4e50, #f9d423);
+      border-radius: 25px;
+      animation: discountFlash 2s infinite;
+    }
+
+    @keyframes discountFlash {
+      0%, 100% { 
+        box-shadow: 0 0 12px rgba(255, 78, 80, 0.5), 0 0 20px rgba(249, 212, 35, 0.3);
+        transform: scale(1);
+      }
+      50% { 
+        box-shadow: 0 0 28px rgba(255, 78, 80, 0.9), 0 0 40px rgba(249, 212, 35, 0.6);
+        transform: scale(1.08);
+      }
+    }
+
+    /* Countdown Timer */
     #countdown {
-      margin-top: 16px;
+      margin-top: 15px;
       font-size: 1.3rem;
       font-weight: bold;
       color: #ffd36b;
-      text-shadow: 0 0 10px rgba(241,176,40,0.7);
+      text-shadow: 0 0 8px rgba(255, 211, 107, 0.7);
     }
 
     /* Features Section */
@@ -272,6 +296,7 @@
         <span class="old-price">₹1499</span>
         <span class="new-price">₹149</span>
       </div>
+      <div class="discount-tag">🎉 Save 90% Today!</div>
       <div id="countdown"></div>
     </div>
   </section>
@@ -333,41 +358,29 @@
   <!-- Countdown Script -->
   <script>
     function startCountdown() {
-      const countdownEl = document.getElementById("countdown");
+      const countdownElement = document.getElementById("countdown");
+      let time = 2 * 60 * 60; // 2 hours in seconds
 
-      // Check if countdown end time already exists in localStorage
-      let endTime = localStorage.getItem("countdownEndTime");
+      function updateCountdown() {
+        let hours = Math.floor(time / 3600);
+        let minutes = Math.floor((time % 3600) / 60);
+        let seconds = time % 60;
 
-      // If not, set a new end time (2 hours from now)
-      if (!endTime || new Date().getTime() > endTime) {
-        endTime = new Date().getTime() + (2 * 60 * 60 * 1000); // 2 hours
-        localStorage.setItem("countdownEndTime", endTime);
+        countdownElement.textContent = `⏳ Offer ends in ${hours}h ${minutes}m ${seconds}s`;
+
+        if (time > 0) {
+          time--;
+        } else {
+          time = 2 * 60 * 60; // Reset timer when it hits 0
+        }
       }
 
-      const timer = setInterval(function() {
-        const now = new Date().getTime();
-        const distance = endTime - now;
-
-        if (distance <= 0) {
-          clearInterval(timer);
-          countdownEl.innerHTML = "⏳ Offer expired! Restarting...";
-
-          // Restart new 2-hour countdown
-          endTime = new Date().getTime() + (2 * 60 * 60 * 1000);
-          localStorage.setItem("countdownEndTime", endTime);
-          startCountdown(); // restart function
-          return;
-        }
-
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        countdownEl.innerHTML = `⏳ Hurry! Offer ends in: ${hours}h ${minutes}m ${seconds}s`;
-      }, 1000);
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
     }
 
-    startCountdown();
+    window.onload = startCountdown;
   </script>
+
 </body>
 </html>
