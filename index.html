@@ -276,6 +276,29 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    /* Floating Buy Button */
+    .floating-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(90deg, #ffd36b, #f1b028);
+      color: #111;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 14px 22px;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 0 15px rgba(241,176,40,0.6), 0 0 30px rgba(241,176,40,0.4);
+      animation: glowPulse 2s infinite ease-in-out;
+      transition: transform 0.2s ease;
+      z-index: 9999;
+    }
+
+    .floating-btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 0 25px rgba(241,176,40,0.85), 0 0 50px rgba(241,176,40,0.65);
+    }
   </style>
 </head>
 <body>
@@ -362,6 +385,9 @@
     <p>Follow us on <a href="https://www.instagram.com/glow.haven.official?igsh=MTRvcmNjeWFqcTMwOQ==" target="_blank">Instagram</a></p>
     <p>© 2025 Glow Haven. All rights reserved.</p>
   </footer>
+
+  <!-- Floating Buy Button -->
+  <a href="https://rzp.io/rzp/43dEikw" class="floating-btn" target="_blank">Buy & Download PDF</a>
 
   <!-- Countdown Script -->
   <script>
