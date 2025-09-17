@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Glow Haven</title>
-  <link rel="stylesheet" href="style.css">
   <style>
     body {
       margin: 0;
@@ -76,6 +75,16 @@
       max-width: 500px;
       box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
     }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 20px auto;
+    }
+    .grid .card {
+      margin: 0;
+    }
   </style>
 </head>
 <body>
@@ -87,8 +96,9 @@
     </nav>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
-    <img src="images/cover.jpg" alt="Glow Haven Cover">
+    <img src="cover.jpg" alt="Glow Haven Cover">
     <h1>Glow With Confidence</h1>
     <p>Your sanctuary for glowing skin & healthy hair. Step into luxury self-care.</p>
     <div>
@@ -100,21 +110,32 @@
     <p>⏳ Offer ends soon</p>
   </section>
 
+  <!-- FEATURES -->
   <section class="section" id="features">
     <h2>✨ What You'll Discover</h2>
-    <div class="card">
-      <h3>Luxury Routines</h3>
-      <p>Step-by-step skincare & haircare rituals designed for premium results.</p>
+    <div class="grid">
+      <div class="card"><h3>Luxury Routines</h3><p>Step-by-step skincare & haircare rituals for glowing results.</p></div>
+      <div class="card"><h3>Natural Remedies</h3><p>Powerful DIY secrets for skin & hair health.</p></div>
+      <div class="card"><h3>Diet & Lifestyle</h3><p>Boost beauty from within with holistic practices.</p></div>
+      <div class="card"><h3>Exclusive Hacks</h3><p>Save time with proven shortcuts for self-care.</p></div>
+      <div class="card"><h3>Hair Growth</h3><p>Unlock the secrets to stronger, longer hair.</p></div>
+      <div class="card"><h3>Clear Skin</h3><p>Fight acne, dullness, and reveal your glow.</p></div>
+      <div class="card"><h3>Anti-Aging</h3><p>Look radiant & youthful with timeless skincare.</p></div>
+      <div class="card"><h3>Luxury Care</h3><p>Premium rituals for that salon-like finish at home.</p></div>
     </div>
   </section>
 
+  <!-- TESTIMONIALS -->
   <section class="section" id="testimonials">
     <h2>💬 Testimonials</h2>
     <div class="card">
-      <p>"Glow Haven changed my skin routine forever!" – Happy Customer</p>
+      <p>"Glow Haven changed my skin routine forever! My confidence is sky-high now." – Priya</p>
     </div>
     <div class="card">
-      <p>"Worth every rupee, I love it!" – Satisfied Buyer</p>
+      <p>"Worth every rupee! I saw results in just 2 weeks." – Rohit</p>
+    </div>
+    <div class="card">
+      <p>"This guide feels like a luxury spa in my own home." – Ananya</p>
     </div>
   </section>
 </body>
